@@ -1,37 +1,37 @@
-# import pizza
+import pizza
 
-# pizza.make_pizza(16, 'pepperoni')
-# pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+pizza.make_pizza(16, 'pepperoni')
+pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
-# ######################################################################################3
+######################################################################################3
 
-# import pizza as p
+import pizza as p
 
-# p.make_pizza(16, 'pepperoni')
-# p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+p.make_pizza(16, 'pepperoni')
+p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
-# ###########################################
+###########################################
 
 
-# from pizza import make_pizza
+from pizza import make_pizza
 
-# make_pizza(16, 'pepperoni')
-# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
-# #############################################################################
+#############################################################################
 
-# from pizza import make_pizza as mp
+from pizza import make_pizza as mp
 
-# mp(16, 'pepperoni')
-# mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+mp(16, 'pepperoni')
+mp(12, 'mushrooms', 'green peppers', 'extra cheese')
 
-####################################################
+###################################################
 
-# from pizza import *
-# from pizza import make_pizza, test
+from pizza import *
+from pizza import make_pizza, test
 
-# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
-# test()
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+test()
 
 
 # pizza.test()

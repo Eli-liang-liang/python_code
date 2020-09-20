@@ -9,3 +9,6 @@ for a in s:
         continue
 
 print("宝石一共有：", count, "个")
+
+
+print(10%2)
