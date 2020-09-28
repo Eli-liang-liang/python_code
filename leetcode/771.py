@@ -16,4 +16,3 @@ s = "aAAbbbb"
 print("宝石一共有：", Solution().numJewelsInStones(j,s), "个")
 
 
-print(10%2)
