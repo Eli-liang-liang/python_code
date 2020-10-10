@@ -23,4 +23,4 @@ C.close()
 # /Users/qifeng/python_code
 # /Users/qifeng/python_code/python_code/course-16
 
-# cd python_code/course-16
+# c
