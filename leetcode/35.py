@@ -14,9 +14,9 @@ class Soluion:
         if target not in nums:
 	        nums.append(target)
 	        nums.sort()
-            for i in range(len(nums)):
-                if nums[i] == target:
-                    x = i
+        for i in range(len(nums)):
+            if nums[i] == target:
+                x = i
         return x
 
 

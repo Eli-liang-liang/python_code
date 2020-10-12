@@ -4,6 +4,12 @@ import pygame
 
 from settings import Settings
 
+def b(A):
+    for i in range(A):
+        c = ("  "*(4-i),end = "", " *  "*(i+1))
+    return c
+
+
 class AlienInvasion:
     """Overall class to manage game assets and behavior."""
 
@@ -12,7 +18,8 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
         self.myfont = pygame.font.SysFont('Comic Sans MS', 30)
-        self.textsurface = self.myfont.render('Hello World!', False, (0, 0, 0))
+        self.textsurface = self.myfont.render('Hello pygame!', False, (0, 0, 0))
+        
 
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
@@ -29,7 +36,8 @@ class AlienInvasion:
 
             # Redraw the screen during each pass through the loop.
             self.screen.fill(self.settings.bg_color)
-            self.screen.blit(self.textsurface,(0,0))
+            self.screen.blit(self.textsurface,(1000,50))
+            self.screen.blit(self.textsurface2,(100,50))
 
             # Make the most recently drawn screen visible.
             pygame.display.flip()
