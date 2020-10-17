@@ -21,9 +21,9 @@
 # A = 5
 # C(A)
 
-def G(A):
-    for i in range(A):
-        print(" " * (A - i), "*" * (i+1))
+# def G(A):
+#     for i in range(A):
+#         print(" " * (A - i), "*" * (i+1))
 
-A = int(input("多少行："))
-G(A)
+# A = int(input("多少行："))
+# G(A)
