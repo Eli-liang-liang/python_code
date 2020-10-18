@@ -11,16 +11,20 @@ def run_game():
     bg_color = (255, 0, 0)
 
 
+
     # 加载ship图片
     ship_image = pygame.image.load('images/ship.bmp')
+    alien_image = pygame.image.load('images/alien.bmp')
     # 获取表示ship位置的坐标对
     ship_rect = ship_image.get_rect()
+    alien_rect = alien_image.get_rect()
     # 获取屏幕信息
     screen_rect = screen.get_rect()
     # 设置ship中间的x处于屏幕中间
     ship_rect.centerx = screen_rect.centerx
+    alien_rect.centerx = 600
     # 设置ship底部处于屏幕底部
-    ship_rect.bottom = screen_rect.bottom
+    ship_rect.bottom = 400
 
     ship_go_up = False
     ship_go_down = False
@@ -85,6 +89,7 @@ def run_game():
         screen.fill(bg_color)
         # 绘制ship
         screen.blit(ship_image, ship_rect)
+        screen.blit(alien_image, alien_rect)
         # 让最近绘制的屏幕可见
         pygame.display.flip()
 # 调用函数
