@@ -1,8 +1,8 @@
-class Circle:
-    def __init__(self, center, radius):
-        self.center = center
+class Circle(object):
+    def __init__(self, center, radius):
+        self.center = center
         self.radius = radius
-    def getCenter(self):
+    def getCenter(self):
         return self.center
     def getRadius(self):
         return self.radius

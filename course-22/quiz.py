@@ -15,7 +15,7 @@
 # 输出：[1,2,2,3,5,6]
 
 class Solution:
-    def A(nums1, nums2, m, n):
+    def A(self,nums1, nums2, m, n):
         i = 0
         j = 0
         while(i <= m-1 and j <= n-1 ):
@@ -33,4 +33,4 @@ class Solution:
 
 nums1 = [1,2,3]
 nums2 = [2,5,6]
-print(A(nums1, nums2,3,3))
+print(Solution().A(nums1, nums2,3,3))
