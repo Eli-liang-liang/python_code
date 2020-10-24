@@ -21,7 +21,17 @@ class Clock(object):
 
 
 	def show(self):
-		return (self._hour, self._minute, self._second)
+		# A = str(self._hour)
+		# if self._hour <10:
+		# 	A = "0" + A
+		# B = str(self._minute)
+		# if self._minute <10:
+		# 	B = "0" + B
+		# C = str(self._second)
+		# if self._second <10:
+		# 	C = "0" + C
+		# return A + ":" + B + ":" + C
+		return "{:0>2d}:{:0>2d}:{:0>2d}".format(self._hour, self._minute, self._second)
 
 
 def main():
