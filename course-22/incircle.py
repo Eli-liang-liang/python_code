@@ -1,20 +1,25 @@
 class Circle(object):
     def __init__(self, center, radius):
-        self.center = center
-        self.radius = radius
-    def getCenter(self):
-        return self.center
-    def getRadius(self):
-        return self.radius
-    def setCenter(self, circle_x, circle_y):
-        self.center = (circle_x, circle_y)
-    def setRadius(self, radius):
-        self.radius = radius
-    def isInside(circle_x, circle_y, rad, x, y): 
-        if ((x - circle_x) * (x - circle_x) + (y - circle_y) * (y - circle_y) <= radius * radius): 
-            print("在圆内")
-        else: 
-            print("在圆外")
+        self.center = center
+        self.radius = radius
+    def getCenter(self):
+        return self.center
+    def getTadius(self):
+        return self.radius
+    def setCenter(self, circle_x, cricle_y):
+        self.center = (circle_x, cricle_y)
+    def setRadius(self, radius):
+        self.radius = radius
+    def isInside(self, point):
+        # point.x point.y
+        if (self.center.x - point.x)**2 + (self.center.y - point.y) ** 2 < self.radius ** 2:
+            print("在⭕️内")
+        elif (self.center.x - point.x)**2 + (self.center.y - point.y) ** 2 == self.radius ** 2:
+            print("在⭕️⬆️")
+        else:
+            print("在⭕️外")
+
+
 import math
 class Point(object):
 
