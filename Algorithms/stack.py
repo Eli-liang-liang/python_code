@@ -23,16 +23,92 @@ class Stack():
     def pop(self):
         self.data.pop()
 
-mystack = Stack()
-mystack.push(9)
-mystack.push(7)
-mystack.push(1)
-mystack.push(8)
-mystack.push(2)
+def exp_to_lst(n):
+    lst = []
+    start_index = 0    
+    end_index = 0      
+    b_start = False
+    for index, item in enumerate(n):
+        if item.isdigit():
+            if not b_start:  
+                start_index = index    
+                b_start = True         
+        else:
+            if b_start:  
+                end_index = index     
+                b_start = False       
+                lst.append(n[start_index:end_index])   
 
-print(mystack.top())
-mystack.pop()
-print(mystack.top())
-mystack.pop()
-print(mystack.top())
-mystack.pop()
+            if item in ('+', '-', '*', '/', '(', ')'):    
+                lst.append(item)
+
+    if b_start:    
+        lst.append(n[start_index:])
+    return lst
+
+map = {'+': 1, '-': 1, '*': 2,'/': 2}
+
+def infix_exp_2_postfix_exp(NB):
+    stack = Stack()
+    NB_lst = exp_to_lst(NB)
+    postfix_lst = []
+    for item in NB_lst:
+        if item.isdigit():
+            postfix_lst.append(item)
+        elif item == '(':
+            stack.push(item)
+        elif item == ')':
+            while stack.top() != '(':
+                postfix_lst.append(stack.top())
+                stack.pop()
+            stack.pop()
+        else:
+            while stack.size() != 0 and stack.top() in ("+-*/") and map[stack.top()] >= map[item]:
+                postfix_lst.append(stack.top())
+                stack.pop()
+            stack.push(item)
+
+    while stack.size() != 0:
+        postfix_lst.append(stack.top())
+        stack.pop()
+
+    return postfix_lst
+
+
+
+
+def c(op, op1, op2):
+    if op == "*":
+        return (op1 * op2)
+    elif op == "+":
+        return (op1+op2)
+    elif op == "-":
+        return (op1-op2)
+    else:
+        return (op1/op2)
+
+
+def c_postfix(postfix):
+    A = Stack()
+
+    for i in postfix:
+        if i.isdigit():
+            A.push(int(i))
+        else:
+            numberA = A.top()
+            A.pop()
+            numberB = A.top()
+            A.pop()
+            result = c(i,numberB,numberA)
+            A.push(result)
+    
+    return (A.top())
+
+print (c_postfix(infix_exp_2_postfix_exp("1 + 2")))
+print (c_postfix(infix_exp_2_postfix_exp(" 2 - 3 + 2 ")))
+print (c_postfix(infix_exp_2_postfix_exp("(1+(4+5+3)-3)+(9+8)")))
+print (c_postfix(infix_exp_2_postfix_exp("(1+(4+5+3)/4-3)+(6+8)*3")))
+
+
+
+

@@ -99,6 +99,25 @@ class LinkedList(object):
             curr = curr.next
         curr.next = curr.next.next
         return self.head
+    
+    def Reverse(self):
+        none = None
+        curr = self.head
+        while curr != None:
+            next = curr.next
+            curr.next = none
+            none = curr
+            curr = next
+        self.head = none
+        
+        return none
+
+
+
+
+
+
+
 
 
 
@@ -111,5 +130,5 @@ n5 = Node(4)
 n2.next = n3
 n3.next = n5
 linkedlist = LinkedList(head=n2)
-print(linkedlist.delete(0))
+print(linkedlist.Reverse())
 linkedlist.print_all()
