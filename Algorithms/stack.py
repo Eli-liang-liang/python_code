@@ -104,11 +104,6 @@ def c_postfix(postfix):
     
     return (A.top())
 
-print (c_postfix(infix_exp_2_postfix_exp("1 + 2")))
-print (c_postfix(infix_exp_2_postfix_exp(" 2 - 3 + 2 ")))
-print (c_postfix(infix_exp_2_postfix_exp("(1+(4+5+3)-3)+(9+8)")))
-print (c_postfix(infix_exp_2_postfix_exp("(1+(4+5+3)/4-3)+(6+8)*3")))
-
-
-
+print(c_postfix("12+3+4+5+"))
+print(c_postfix("12345*+*+"))
 
